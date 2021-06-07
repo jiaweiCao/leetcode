@@ -45,9 +45,28 @@ var rotateRight = function (head, k) {
     cur = cur.next;
   }
 
+  /** 原始链表，用于取值 */
   let cur2 = head;
+
+  /** 新的链表头部 */
+  let curNew = newListHeadNode;
+
   /** 再次循环表，获取值到新的表中 */
-  while (cur2) {}
+  while (cur2) {
+    for (let i = 0; i < k; i++) {
+      /** 在新的链表中的对应位置走 k步，然后将 cur2的值赋给它*/
+      let x = curNew;
+      if (i === k - 1) {
+        x.val = cur2.val;
+      } else {
+        x = x.next;
+      }
+    }
+    /** cur2往前走 */
+    cur2 = cur2.next;
+    /** 新链表也往前走到达对应的位置 */
+    curNew = curNew.next;
+  }
 
   /** 将尾部的环置空 */
   newListTailNode.next = null;
