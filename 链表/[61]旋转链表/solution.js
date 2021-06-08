@@ -17,6 +17,9 @@
  */
 
 var rotateRight = function (head, k) {
+  if (!head) {
+    return null;
+  }
   let cur = head;
   /** 生成新的链表头 */
   let newListHeadNode = new ListNode(0);
@@ -53,11 +56,12 @@ var rotateRight = function (head, k) {
 
   /** 再次循环表，获取值到新的表中 */
   while (cur2) {
-    for (let i = 0; i < k; i++) {
+    let x = curNew;
+    for (let i = 0; i <= k; i++) {
       /** 在新的链表中的对应位置走 k步，然后将 cur2的值赋给它*/
-      let x = curNew;
-      if (i === k - 1) {
+      if (i === k) {
         x.val = cur2.val;
+        break;
       } else {
         x = x.next;
       }
