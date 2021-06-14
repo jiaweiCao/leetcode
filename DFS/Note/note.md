@@ -121,18 +121,16 @@ function dfs(root) {
 ```
 function dfs(root) {
 
-  let cur = {flag: 0, node: root}
-
-  let stack = []
+  let stack = [ {flag: 0, node: root}]
 
   let result = []
 
   while (stack.length > 0) {
-    if (flag === 1) {
-      result.push(cur.node.val)
-    } else {
       // 从栈中取出来
       const popItem = stack.pop()
+    if (flag === 1) {
+      result.push(popItem.node.val)
+    } else {
       // 将当前置为1 入栈，下次直接取。
       stack.push({flag: 1, node: popItem.node})
 
