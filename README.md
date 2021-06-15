@@ -1,2 +1,2 @@
 # leetcode
-record
+record this for target
