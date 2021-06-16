@@ -22,7 +22,11 @@ const hight = (root) => {
 };
 var isBalanced = function (root) {
   if (!root) {
-    return 0;
+    return true;
   }
-  return Math.abs(isBalanced(root.left) - isBalanced(root.right)) < 1;
+  return (
+    isBalanced(root.left) &&
+    isBalanced(root.right) &&
+    Math.abs(hight(root.left) - hight(root.right)) <= 1
+  );
 };
