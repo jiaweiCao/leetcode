@@ -2,6 +2,11 @@
  * @param {string} s
  * @return {string[]}
  */
+
+/**
+ * 首刷，一次写对
+ *
+ */
 const isIpItem = (str) => {
   if (!str) {
     return false;
