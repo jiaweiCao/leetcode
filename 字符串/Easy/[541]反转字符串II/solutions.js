@@ -8,13 +8,16 @@ var reverseStr = function (s, k) {
   const len = strArr.length;
   for (let i = 0; i < len; i += 2 * k) {
     let l = i;
-    let r = i + k - 1 > len - 1 ? len : i + k - 1;
-    while (l++ <= r--) {
+    let r = i + k - 1 > len - 1 ? len - 1 : i + k - 1;
+    console.log(l, r);
+    while (l <= r) {
       const tem = strArr[r];
       strArr[r] = strArr[l];
       strArr[l] = tem;
+      l++;
+      r--;
     }
   }
   return strArr.join("");
 };
-console.log(reverseStr("abcdefg", 2));
+console.log(reverseStr("ba", 1));
