@@ -4,11 +4,11 @@
  */
 
 /**
- * 回溯（该解法会超时）
+ * 深搜（该解法会超时）
  */
 var climbStairs = function (n) {
   let result = 0;
-  const backTracking = (sum) => {
+  const bfs = (sum) => {
     if (sum > n) {
       return;
     }
@@ -17,10 +17,10 @@ var climbStairs = function (n) {
       return;
     }
 
-    backTracking(sum + 1);
-    backTracking(sum + 2);
+    bfs(sum + 1);
+    bfs(sum + 2);
   };
-  backTracking(0);
+  bfs(0);
   return result;
 };
 
