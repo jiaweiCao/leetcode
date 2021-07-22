@@ -69,12 +69,3 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
   /** 返回最后一个格子的可能性 */
   return dp[obstacleGrid.length - 1][obstacleGrid[0].length - 1];
 };
-
-console.log(
-  uniquePathsWithObstacles([
-    [0, 1, 0, 0, 0],
-    [1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-  ])
-);
