@@ -7,4 +7,6 @@
  * 首刷
  *
  */
-var numTrees = function (n) {};
+var numTrees = function (n) {
+  const result = [];
+};
